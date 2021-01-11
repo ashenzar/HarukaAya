@@ -30,7 +30,7 @@ from telegram.ext.callbackcontext import CallbackContext
 from telegram.utils.helpers import escape_markdown, mention_html
 from telegram.error import BadRequest
 
-from haruka import dispatcher, OWNER_ID, SUDO_USERS, WHITELIST_USERS
+from haruka import CONFIG
 from haruka.__main__ import GDPR
 from haruka.__main__ import STATS, USER_INFO
 from haruka.modules.disable import DisableAbleCommandHandler
@@ -118,16 +118,16 @@ def info(update: Update, context: CallbackContext):
     text += tld(chat.id,
                 "misc_info_user_link").format(mention_html(user.id, "link"))
 
-    if user.id == OWNER_ID:
+    if user.id == CONFIG.owner_id:
         text += tld(chat.id, "misc_info_is_owner")
     else:
         if user.id == int(254318997):
             text += tld(chat.id, "misc_info_is_original_owner")
 
-        if user.id in SUDO_USERS:
+        if user.id in CONFIG.sudo_users:
             text += tld(chat.id, "misc_info_is_sudo")
         else:
-            if user.id in WHITELIST_USERS:
+            if user.id in CONFIG.whitelist_users:
                 text += tld(chat.id, "misc_info_is_whitelisted")
 
     for mod in USER_INFO:
@@ -463,7 +463,7 @@ ID_HANDLER = DisableAbleCommandHandler("id",
                                        pass_args=True,
                                        run_async=True,
                                        admin_ok=True)
-IP_HANDLER = CommandHandler("ip", get_bot_ip, run_async=True, filters=Filters.chat(OWNER_ID))
+IP_HANDLER = CommandHandler("ip", get_bot_ip, run_async=True, filters=Filters.chat(CONFIG.owner_id))
 INFO_HANDLER = DisableAbleCommandHandler("info",
                                          info,
                                          pass_args=True,
@@ -476,13 +476,13 @@ REPO_HANDLER = DisableAbleCommandHandler("repo",
                                          run_async=True,
                                          admin_ok=True)
 
-ECHO_HANDLER = CommandHandler("echo", echo, run_async=True, filters=Filters.user(OWNER_ID))
+ECHO_HANDLER = CommandHandler("echo", echo, run_async=True, filters=Filters.user(CONFIG.owner_id))
 MD_HELP_HANDLER = CommandHandler("markdownhelp",
                                  markdown_help,
                                  run_async=True,
                                  filters=Filters.chat_type.private)
 
-STATS_HANDLER = CommandHandler("stats", stats, run_async=True, filters=Filters.user(OWNER_ID))
+STATS_HANDLER = CommandHandler("stats", stats, run_async=True, filters=Filters.user(CONFIG.owner_id))
 GDPR_HANDLER = CommandHandler("gdpr", gdpr, run_async=True, filters=Filters.chat_type.private)
 PASTE_HANDLER = DisableAbleCommandHandler("paste", paste, pass_args=True, run_async=True)
 GET_PASTE_HANDLER = DisableAbleCommandHandler("getpaste",
@@ -497,20 +497,20 @@ UD_HANDLER = DisableAbleCommandHandler("ud", ud, run_async=True)
 WIKI_HANDLER = DisableAbleCommandHandler("wiki", wiki, run_async=True)
 COVID_HANDLER = DisableAbleCommandHandler("covid", covid, run_async=True, admin_ok=True)
 
-dispatcher.add_handler(UD_HANDLER)
-dispatcher.add_handler(PASTE_HANDLER)
-dispatcher.add_handler(GET_PASTE_HANDLER)
-dispatcher.add_handler(PASTE_STATS_HANDLER)
-dispatcher.add_handler(ID_HANDLER)
-dispatcher.add_handler(IP_HANDLER)
-dispatcher.add_handler(INFO_HANDLER)
-dispatcher.add_handler(ECHO_HANDLER)
-dispatcher.add_handler(MD_HELP_HANDLER)
-dispatcher.add_handler(STATS_HANDLER)
-dispatcher.add_handler(GDPR_HANDLER)
-dispatcher.add_handler(GITHUB_HANDLER)
-dispatcher.add_handler(REPO_HANDLER)
-dispatcher.add_handler(
+CONFIG.dispatcher.add_handler(UD_HANDLER)
+CONFIG.dispatcher.add_handler(PASTE_HANDLER)
+CONFIG.dispatcher.add_handler(GET_PASTE_HANDLER)
+CONFIG.dispatcher.add_handler(PASTE_STATS_HANDLER)
+CONFIG.dispatcher.add_handler(ID_HANDLER)
+CONFIG.dispatcher.add_handler(IP_HANDLER)
+CONFIG.dispatcher.add_handler(INFO_HANDLER)
+CONFIG.dispatcher.add_handler(ECHO_HANDLER)
+CONFIG.dispatcher.add_handler(MD_HELP_HANDLER)
+CONFIG.dispatcher.add_handler(STATS_HANDLER)
+CONFIG.dispatcher.add_handler(GDPR_HANDLER)
+CONFIG.dispatcher.add_handler(GITHUB_HANDLER)
+CONFIG.dispatcher.add_handler(REPO_HANDLER)
+CONFIG.dispatcher.add_handler(
     DisableAbleCommandHandler("removebotkeyboard", reply_keyboard_remove))
-dispatcher.add_handler(WIKI_HANDLER)
-dispatcher.add_handler(COVID_HANDLER)
+CONFIG.dispatcher.add_handler(WIKI_HANDLER)
+CONFIG.dispatcher.add_handler(COVID_HANDLER)

@@ -21,7 +21,7 @@ from telegram.error import BadRequest
 from telegram.ext import Filters, MessageHandler
 from telegram.ext.callbackcontext import CallbackContext
 
-from haruka import dispatcher
+from haruka import CONFIG
 from haruka.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
 from haruka.modules.sql import afk_sql as sql
 from haruka.modules.users import get_user_id
@@ -146,7 +146,7 @@ AFK_REGEX_HANDLER = DisableAbleMessageHandler(Filters.regex("(?i)brb"), afk, fri
 NO_AFK_HANDLER = MessageHandler(Filters.all & Filters.chat_type.groups, no_longer_afk, run_async=True)
 AFK_REPLY_HANDLER = MessageHandler(Filters.all & Filters.chat_type.groups, reply_afk, run_async=True)
 
-dispatcher.add_handler(AFK_HANDLER, AFK_GROUP)
-dispatcher.add_handler(AFK_REGEX_HANDLER, AFK_GROUP)
-dispatcher.add_handler(NO_AFK_HANDLER, AFK_GROUP)
-dispatcher.add_handler(AFK_REPLY_HANDLER, AFK_REPLY_GROUP)
+CONFIG.dispatcher.add_handler(AFK_HANDLER, AFK_GROUP)
+CONFIG.dispatcher.add_handler(AFK_REGEX_HANDLER, AFK_GROUP)
+CONFIG.dispatcher.add_handler(NO_AFK_HANDLER, AFK_GROUP)
+CONFIG.dispatcher.add_handler(AFK_REPLY_HANDLER, AFK_REPLY_GROUP)

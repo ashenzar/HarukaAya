@@ -15,24 +15,14 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import html
-import time
-from io import BytesIO
-from typing import List
 
 from telegram import Update, ParseMode
-from telegram.error import BadRequest  #,  TelegramError
 from telegram.ext import CommandHandler, MessageHandler, Filters
 from telegram.ext.callbackcontext import CallbackContext
-from telegram.utils.helpers import mention_html
 
 import haruka.modules.sql.antispam_sql as sql
-from haruka import dispatcher, OWNER_ID, SUDO_USERS, STRICT_ANTISPAM, sw
+from haruka import CONFIG
 from haruka.modules.helper_funcs.chat_status import user_admin, is_user_admin
-from haruka.modules.helper_funcs.extraction import extract_user_and_text
-from haruka.modules.helper_funcs.filters import CustomFilters
-#from haruka.modules.helper_funcs.misc import send_to_list
-# from haruka.modules.sql.users_sql import get_all_chats
 
 from haruka.modules.tr_engine.strings import tld
 
@@ -43,8 +33,8 @@ def check_and_ban(update, user_id, should_message=True):
     chat = update.effective_chat
     message = update.effective_message
     try:
-        if sw != None:
-            sw_ban = sw.get_ban(user_id)
+        if CONFIG.spamwatch_client is not None:
+            sw_ban = CONFIG.spamwatch_client.get_ban(user_id)
             if sw_ban:
                 spamwatch_reason = sw_ban.reason
                 chat.kick_member(user_id)
@@ -120,7 +110,7 @@ ANTISPAM_STATUS = CommandHandler("antispam",
 
 GBAN_ENFORCER = MessageHandler(Filters.all & Filters.chat_type.groups, enforce_gban, run_async=True)
 
-dispatcher.add_handler(ANTISPAM_STATUS)
+CONFIG.dispatcher.add_handler(ANTISPAM_STATUS)
 
-if STRICT_ANTISPAM:  # enforce GBANS if this is set
-    dispatcher.add_handler(GBAN_ENFORCER, GBAN_ENFORCE_GROUP)
+if CONFIG.strict_antispam:  # enforce GBANS if this is set
+    CONFIG.dispatcher.add_handler(GBAN_ENFORCER, GBAN_ENFORCE_GROUP)
