@@ -21,7 +21,7 @@ main_start_pm: |
 
 main_start_btn_support: '📢 Grupo de Soporte'
 main_start_btn_ctrlpnl: '🛠 Panel de control'
-main_start_btn_lang: '🇺🇸 Idioma'
+main_start_btn_lang: '🇪🇸 Idioma'
 #Common
 common_err_no_admin: '¡No eres un administrador!'
 common_err_no_user: Parece que usted no se refiere a un usuario.
