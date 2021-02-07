@@ -1,7 +1,5 @@
 # Synthetic Doll
 
-![](images/haruka_banner.png)
-
 SyntheticDoll is an open source Telegram group manager bot, this is a modular based 
 Telegram Python Bot running on Python3 with sqlalchmey database.
 
@@ -12,9 +10,7 @@ This bot can be found and used on telegram as [Yumeko](https://t.me/SyntheticDol
 
 ## Installation
 
-<p align="center">
-  <a href = "https://heroku.com/deploy?template=https://github.com/ashenzar/SyntheticDoll/tree/main"><img src="https://telegra.ph/file/57c4edb389224c9cf9996.png" alt="Press to Takeoff" width="490px"></a>
-</p>
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ashenzar/SyntheticDoll/tree/main)
 
 Click in the button above and fill the required vars.
 
