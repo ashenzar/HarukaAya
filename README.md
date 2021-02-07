@@ -3,7 +3,7 @@
 SyntheticDoll is an open source Telegram group manager bot, this is a modular based 
 Telegram Python Bot running on Python3 with sqlalchmey database.
 
-This bot can be found and used on telegram as [Yumeko](https://t.me/SyntheticDollBot).
+This bot can be found on telegram as [Yumeko](https://t.me/SyntheticDollBot).
  
 -------------------------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ In order to obtain an API key and hash you need to do the following:
  - Sign up for Telegram using any application.
  - Login to your Telegram core: [https://my.telegram.org](https://my.telegram.org).
  - Go to '[API Development tools](https://my.telegram.org/apps)' and fill out the form.
- - You will get basic addresses as well as the `api_id` and `api_hash` parameters 
+ - You will get basic addresses as well as the `API_ID` and `API_HASH` parameters 
    required for Haruka's configuration file.
 
 ### Docker 
