@@ -131,7 +131,7 @@ def send_start(bot, update):
     chat = update.effective_chat
 
     # chat = update.effective_chat and unused variable
-    text = tld(chat.id, 'main_start_pm')
+    text = tld(chat.id, 'main_start_pm').format(dispatcher.bot.first_name)
 
     keyboard = [[
         InlineKeyboardButton(text=tld(chat.id, 'main_start_btn_lang'),
@@ -229,7 +229,6 @@ def help_button(bot: Bot, update: Update):
             bot.edit_message_text(chat_id=query.message.chat_id,
                                   message_id=query.message.message_id,
                                   text=tld(chat.id, "send-help").format(
-                                      dispatcher.bot.first_name,
                                       tld(chat.id, "cmd_multitrigger")),
                                   parse_mode=ParseMode.MARKDOWN,
                                   reply_markup=InlineKeyboardMarkup(
