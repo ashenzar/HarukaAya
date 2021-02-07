@@ -98,7 +98,7 @@ android_help: |
   *Misc*
   - /magisk: Adquirir la última versión de Magisk
 #Antiflood
-modname_antiflood: Antimlounda
+modname_antiflood: Antiflood
 flood_mute: Me gustaría dejar la inundación en manos de desastres naturales, pero usted no fue más que una decepción. *¡Mucho*!
 flood_err_no_perm: '¡No puedo silenciar a la gente, dame permisos primero! Hasta entonces, desactivaré la antiflood.'
 flood_logger_success: "<b>{}:</b>\n#MUTED\n<b>Usuario:</b> {}\nInundó el grupo."
@@ -771,7 +771,7 @@ welcome_help: |
 users_seen: "Los he visto en <code>{}</code> chats en total."
 users_seen_is_bot: "Los he visto en... Wow. ¿Están acechándome? Están en todos los mismos lugares que so... oh. Soy yo."
 #Userinfo
-modname_userinfo: Bios/Abouts
+modname_userinfo: Bios
 userinfo_about_not_set_they: "{} aún no ha establecido un mensaje informativo sobre sí mismo!"
 userinfo_about_not_set_you: '¡Aún no has configurado un mensaje informativo sobre ti mismo!'
 userinfo_about_set_success: '¡Actualizada tu información!'
