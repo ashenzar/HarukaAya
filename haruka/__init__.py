@@ -19,6 +19,7 @@ import logging
 import sys
 import yaml
 import spamwatch
+import os
 
 from telethon import TelegramClient
 import telegram.ext as tg
@@ -41,7 +42,7 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 8:
 
 # Load config
 try:
-    CONFIG = yaml.load(open('config.yml', 'r'), Loader=yaml.SafeLoader)
+    ENV = os.environ.get('ENV')
 except FileNotFoundError:
     print("Are you dumb? C'mon start using your brain!")
     quit(1)
@@ -51,52 +52,52 @@ except Exception as eee:
     )
     quit(1)
 
-if not CONFIG['is_example_config_or_not'] == "not_sample_anymore":
+if not ENV == "True":
     print("Please, use your eyes and stop being blinded.")
     quit(1)
 
-TOKEN = CONFIG['bot_token']
-API_KEY = CONFIG['api_key']
-API_HASH = CONFIG['api_hash']
+TOKEN = os.environ.get('TOKEN')
+API_KEY = os.environ.get('API_KEY')
+API_HASH = os.environ.get('API_HASH')
 
 try:
-    OWNER_ID = int(CONFIG['owner_id'])
+    OWNER_ID = int(os.environ.get('OWNER_ID'))
 except ValueError:
     raise Exception("Your 'owner_id' variable is not a valid integer.")
 
 try:
-    MESSAGE_DUMP = CONFIG['message_dump']
+    MESSAGE_DUMP = os.environ.get('MESSAGE_DUMP')
 except ValueError:
     raise Exception("Your 'message_dump' must be set.")
 
 try:
-    OWNER_USERNAME = CONFIG['owner_username']
+    OWNER_USERNAME = os.environ.get('OWNER_USERNAME')
 except ValueError:
     raise Exception("Your 'owner_username' must be set.")
 
 try:
-    SUDO_USERS = set(int(x) for x in CONFIG['sudo_users'] or [])
+    SUDO_USERS = set(int(x) for x in os.environ.get('SUDO_USERS') or [])
 except ValueError:
     raise Exception("Your sudo users list does not contain valid integers.")
 
 try:
-    WHITELIST_USERS = set(int(x) for x in CONFIG['whitelist_users'] or [])
+    WHITELIST_USERS = set(int(x) for x in os.environ.get('WHITELIST_USERS') or [])
 except ValueError:
     raise Exception(
         "Your whitelisted users list does not contain valid integers.")
 
-DB_URI = CONFIG['database_url']
-LOAD = CONFIG['load']
-NO_LOAD = CONFIG['no_load']
-DEL_CMDS = CONFIG['del_cmds']
-STRICT_ANTISPAM = CONFIG['strict_antispam']
-WORKERS = CONFIG['workers']
+DB_URI = os.environ.get('DATABASE_URL')
+LOAD = os.environ.get('LOAD').split()
+NO_LOAD = os.environ.get('NO_LOAD').split()
+DEL_CMDS = ast.literal_eval(os.environ.get('DEL_CMDS'))
+STRICT_ANTISPAM = ast.literal_eval(os.environ.get('STRICT_ANTISPAM'))
+WORKERS = os.environ.get('WORKERS')
 
 # Append OWNER_ID to SUDO_USERS
 SUDO_USERS.add(OWNER_ID)
 
 # SpamWatch
-spamwatch_api = CONFIG['sw_api']
+spamwatch_api = os.environ.get('SW_API')
 
 if spamwatch_api == "None":
     sw = None
