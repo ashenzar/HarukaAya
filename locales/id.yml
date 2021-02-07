@@ -387,7 +387,7 @@ language_not_supported: "{} belum didukung!"
 language_code_not_valid: Itu bukan kode bahasa yang valid. Gunakan kode ISO yang diterima secara internasional!
 language_current_locale: "Lokal saat ini untuk obrolan ini adalah: *{}*"
 language_select_language: "*Pilih bahasa*\n"
-language_user_language: "Bahasa pengguna: `{}`\n\nBantu kami membawa lebih banyak bahasa ke bot dengan berkontribusi pada proyek di [Crowdin](https://crowdin.com/project/haruka)!"
+language_user_language: "Bahasa pengguna: `{}`\n\n"
 language_chat_language: "\nBahasa obrolan yang terhubung: `{}`"
 language_sel_user_lang: "*\n\nPilih bahasa pengguna baru: *"
 #Locks
