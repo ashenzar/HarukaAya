@@ -657,8 +657,7 @@ rules_help: |
 #Translator
 modname_translator: Traductor
 translator_translated: |
-  Fuente (`{}`):\n{}
-  Destino (`{}`):\n{}
+  Fuente (`{}`)\n\n{}
 translator_err: Error al traducir:\n{}
 translator_help: "- /tr (código de idioma): Obtener la traducción del mensaje respondido."
 translator_no_str: Responder a un mensaje para traducir!
