@@ -642,8 +642,7 @@ rules_help: |
 #Translator
 modname_translator: Translator
 translator_translated: |
-  Source (`{}`):\n{}
-  Destination (`{}`):\n{}
+  Source (`{}`)\n\n{}
 translator_err: Error occured while translating:\n{}
 translator_help: "- /tr (language code): Get the translation of the replied message."
 translator_no_str: Reply to a message to translate!

@@ -653,8 +653,7 @@ rules_help: |
 #Translator
 modname_translator: Переводчик
 translator_translated: |
-  Оригинал (`{}`):\n{}
-  Перевод (`{}`):\n{}
+  Оригинал (`{}`)\n\n{}
 translator_err: Произошла ошибка при переводе:\n{}
 translator_help: "- /tr (код языка): Получить перевод ответного сообщения."
 translator_no_str: Ответьте на сообщение для перевода!

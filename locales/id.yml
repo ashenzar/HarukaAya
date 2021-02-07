@@ -637,8 +637,7 @@ rules_help: |
 #Translator
 modname_translator: Penerjemah
 translator_translated: |
-  Sumber (`{}`):\n{}
-  Tujuan (`{}`):\n{}
+  Sumber (`{}`)\n\n{}
 translator_err: Terjadi kesalahan saat menerjemahkan:\n {}
 translator_help: "- /tr (kode bahasa): Dapatkan terjemahan dari pesan yang dibalas."
 translator_no_str: Balas pesan untuk diterjemahkan!
