@@ -134,10 +134,6 @@ def send_start(bot, update):
     text = tld(chat.id, 'main_start_pm')
 
     keyboard = [[
-        InlineKeyboardButton(text=tld(chat.id, 'main_start_btn_support'),
-                             url="https://t.me/HarukaAyaGroup")
-    ]]
-    keyboard += [[
         InlineKeyboardButton(text=tld(chat.id, 'main_start_btn_lang'),
                              callback_data="set_lang_"),
         InlineKeyboardButton(text=tld(chat.id, 'btn_help'),
