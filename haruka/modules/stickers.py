@@ -251,7 +251,7 @@ def makepack_internal(msg, user, png_sticker, emoji, bot, packname, packnum,
             extra_version = " " + str(packnum)
         success = bot.create_new_sticker_set(user.id,
                                              packname,
-                                             f"{name}s haruka pack" +
+                                             f"{name} steal pack" +
                                              extra_version,
                                              png_sticker=png_sticker,
                                              emojis=emoji)
