@@ -621,7 +621,7 @@ notes_help: |
 
   Nota: Los nombres de notas son insensibles en mayúsculas y minúsculas, y se convierten automáticamente a minúsculas antes de ser guardadas.
 #Reporting
-modname_reporting: Informando
+modname_reporting: Informes
 reports_pm_on: "¡Informes activados! Serás notificado cada vez que alguien reporte algo."
 reports_pm_off: "¡Desactivada la información! No obtendrás ningún informe."
 reports_chat_on: "¡Informes activados! Los administradores que han activado los informes serán notificados cuando se llame /report o @admin."
