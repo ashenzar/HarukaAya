@@ -92,7 +92,7 @@ LOAD = os.environ.get('LOAD').split()
 NO_LOAD = os.environ.get('NO_LOAD').split()
 DEL_CMDS = ast.literal_eval(os.environ.get('DEL_CMDS'))
 STRICT_ANTISPAM = ast.literal_eval(os.environ.get('STRICT_ANTISPAM'))
-WORKERS = os.environ.get('WORKERS')
+WORKERS = int(os.environ.get('WORKERS'))
 
 # Append OWNER_ID to SUDO_USERS
 SUDO_USERS.add(OWNER_ID)
