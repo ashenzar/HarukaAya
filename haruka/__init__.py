@@ -118,6 +118,9 @@ tbot = TelegramClient("haruka", API_KEY, API_HASH)
 SUDO_USERS = list(SUDO_USERS)
 WHITELIST_USERS = list(WHITELIST_USERS)
 
+LOAD = list(LOAD)
+NO_LOAD = list(NO_LOAD)
+
 # Load at end to ensure all prev variables have been set
 from haruka.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler
 
