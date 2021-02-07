@@ -1,7 +1,7 @@
 ---
 #Main
 send-help: |
-  Hai! Namaku adalah *{}*. Saya bot manajemen grup modular dengan beberapa fitur tambahan menyenangkan! Lihatlah berikut ini untuk mengetahui beberapa hal yang dapat saya bantu. \n
+  Lihatlah berikut ini untuk mengetahui beberapa hal yang dapat saya bantu. \n
   Perintah utama yang tersedia:
   - /start: Perintah keren untuk memeriksa apakah bot masih hidup atau tidak
   - /help: Mengirim pesan pribadi untuk Anda.
@@ -11,6 +11,7 @@ send-help: |
   - /setting:
   - dalam Pesan Pribadi: akan mengirimkan pengaturan Anda untuk semua modul yang didukung.
   - dalam grup: akan mengarahkan Anda ke pesan pribadi, dengan semua pengaturan obrolan itu. {}
+
 cmd_multitrigger: \nSemua perintah dapat dimulai dengan `/` atau `!`.
 here_is_help: Berikut ini beberapa bantuan untuk modul *{}*:\n\n{}
 help_not_found: String bantuan untuk <code>{}</code> tidak ditemukan!
@@ -19,8 +20,7 @@ btn_help: '❔ Bantuan'
 btn_go_back: '⬅️ Kembali'
 main_start_group: Hai yang disana! Saya masih hidup :3
 main_start_pm: |
-  Hai! Nama saya Yumeko Jabami - Saya di sini untuk membantu Anda mengelola grup Anda!
-  Klik tombol Bantuan untuk mencari tahu lebih lanjut tentang cara menggunakan saya dengan menggunakan potensi penuh saya.
+  Hai! Namaku adalah *{}*. Saya bot manajemen grup modular dengan beberapa fitur tambahan menyenangkan!
 
 main_start_btn_support: '📢 Grup Dukungan'
 main_start_btn_ctrlpnl: '🛠 Panel kontrol'
