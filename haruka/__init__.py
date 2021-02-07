@@ -88,11 +88,11 @@ except ValueError:
         "Your whitelisted users list does not contain valid integers.")
 
 DB_URI = os.environ.get('DATABASE_URL')
-LOAD = os.environ.get('LOAD').split() or []
-NO_LOAD = os.environ.get('NO_LOAD').split() or []
+LOAD = os.environ.get('LOAD', '').split()
+NO_LOAD = os.environ.get('NO_LOAD', 'translation').split()
 DEL_CMDS = ast.literal_eval(os.environ.get('DEL_CMDS'))
 STRICT_ANTISPAM = ast.literal_eval(os.environ.get('STRICT_ANTISPAM'))
-WORKERS = int(os.environ.get('WORKERS'))
+WORKERS = int(os.environ.get('WORKERS', 4))
 
 # Append OWNER_ID to SUDO_USERS
 SUDO_USERS.add(OWNER_ID)
