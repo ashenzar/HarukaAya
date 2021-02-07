@@ -42,7 +42,7 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 8:
     quit(1)
 
 # Load config
-ENV = ast.literal_eval(os.environ.get('ENV', True))
+ENV = ast.literal_eval(os.environ.get('ENV', 'True'))
 
 if ENV != True:
     print("Please, set the ENV var to True.")
