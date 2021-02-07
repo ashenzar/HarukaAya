@@ -43,18 +43,9 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 8:
 
 # Load config
 try:
-    ENV = os.environ.get('ENV')
-except FileNotFoundError:
-    print("Are you dumb? C'mon start using your brain!")
-    quit(1)
-except Exception as eee:
-    print(
-        f"Ah, look like there's error(s) while trying to load your config. It is\n!!!! ERROR BELOW !!!!\n {eee} \n !!! ERROR END !!!"
-    )
-    quit(1)
-
-if not ENV == "True":
-    print("Please, use your eyes and stop being blinded.")
+    ENV = ast.literal_eval(os.environ.get('ENV', True))
+if not ENV == True:
+    print("Please, set the ENV var to True.")
     quit(1)
 
 TOKEN = os.environ.get('TOKEN')
