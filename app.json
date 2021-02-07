@@ -1,0 +1,59 @@
+
+{
+  "name": "SyntheticDoll",
+  "description": "Telegram's sassiest group manager. Modular Telegram group management bot!",
+  "keywords": [
+    "telegram",
+    "best",
+    "group",
+    "manager",
+    "3"
+  ],
+  "repository": "https://github.com/ashenzar/HarukaAya",
+  "env": {
+    "ENV": {
+      "description": "Setting this to ANYTHING will enable env variables",
+      "value": "True"
+    },
+    "TOKEN": {
+      "description": "Your bot token, as a string.",
+      "value": ""
+    },
+    "OWNER_ID": {
+      "description": "An integer of consisting of your owner ID",
+      "value": ""
+    },
+    "OWNER_USERNAME": {
+      "description": "Your username",
+      "value": ""
+    },
+    "MESSAGE_DUMP": {
+      "description": "optional: a chat where your replied saved messages are stored, to stop people deleting their old",
+      "value": "-1007777777777"
+    },
+    "SUDO_USERS": {
+      "description": "A space separated list of user_ids which should be considered sudo users",
+      "value": ""
+    },
+    "WHITELIST_USERS": {
+      "description": "A space separated list of user_ids which should be considered whitelisted - they can't be banned.",
+      "value": ""
+    },
+    "DEL_CMDS": {
+      "description": "Whether to delete commands from users which don't have rights to use that command",
+      "value": "True"
+    },
+    "STRICT_ANTISPAM": {
+      "description": "Enforce gbans across new groups as well as old groups. When a gbanned user talks, he will be banned.",
+      "value": "False"
+    },
+    "DATABASE_URL": {
+      "description": "You postgresql database link.",
+      "value": "postgresql:"
+    },
+    "API_KEY": {
+    },
+    "API_HASH": {
+    }
+  }
+}
