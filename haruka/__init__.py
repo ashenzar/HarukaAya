@@ -20,6 +20,7 @@ import sys
 import yaml
 import spamwatch
 import os
+import ast
 
 from telethon import TelegramClient
 import telegram.ext as tg
