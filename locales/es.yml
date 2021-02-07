@@ -211,7 +211,7 @@ bans_help: |
   Un ejemplo de silenciar temporalmente a alguien:
   /tmute @username 2h; esto silencia a un usuario durante 2 horas.
 #Blacklist
-modname_blacklist: Listas negras
+modname_blacklist: Lista negra
 blacklist_active_list: Filtros de lista negra activos en {}:\n
 blacklist_no_list: '¡No hay filtros de lista negra en <b>{}</b>!'
 blacklist_add: Añadido <code>{}</code> a la lista negra en <b>{}</b>!
@@ -664,7 +664,7 @@ translator_help: "- /tr (código de idioma): Obtener la traducción del mensaje 
 translator_no_str: Responder a un mensaje para traducir!
 translator_no_args: '¡Especifique el idioma al que desea traducir el mensaje contestado!'
 #URL Blacklist
-modname_urlblacklist: Listas negras del dominio
+modname_urlblacklist: Lista negra de dominios
 url_blacklist_success: "Añadido el dominio <code>{}</code> a la lista negra!"
 url_blacklist_invalid: "Estás intentando hacer una lista negra de una url no válida"
 url_blacklist_success_2: Se añadieron <code>{}</code> dominios a la lista negra.
